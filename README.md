@@ -16,7 +16,7 @@ Usage
 
 Just copy your code to `/usr/lib/apache2/htdocs`.
 
-```docker
+```dockerfile
 FROM dotboris/httpd-hhvm
 COPY . /usr/lib/apache2/htdocs
 ```
