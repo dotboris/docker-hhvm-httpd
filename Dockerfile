@@ -7,7 +7,13 @@ RUN apt-key adv --recv-keys --keyserver \
   && echo deb http://dl.hhvm.com/debian jessie main \
     > /etc/apt/sources.list.d/hhvm.list \
   && apt-get update \
-  && apt-get install -y "hhvm=3.14.*" \
+  && apt-get install -y \
+    "hhvm=3.14.*" \
+    supervisor \
   && rm -rf /var/lib/apt/lists/*
 
 COPY httpd*.conf /usr/local/apache2/conf/
+
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+CMD ["/usr/bin/supervisord"]
