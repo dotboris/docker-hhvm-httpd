@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule "^rewritten.txt$" file.txt [L]
