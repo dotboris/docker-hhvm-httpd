@@ -17,6 +17,9 @@ Usage
 Just copy your code to `/usr/lib/apache2/htdocs`.
 
 ```dockerfile
-FROM dotboris/httpd-hhvm
-COPY . /usr/lib/apache2/htdocs
+FROM dotboris/hhvm-httpd
+
+RUN rm -rf /usr/local/apache2/htdocs/*
+COPY . /usr/lib/apache2/htdocs/
+RUN chown -R www-data:www-data /usr/local/apache2/htdocs/
 ```
