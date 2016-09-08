@@ -1,4 +1,4 @@
-dotboris/httpd-hhvm
+dotboris/hhvm-httpd
 ===================
 
 HTTPD (Apache) and HHVM running on Debian Jessie. Ready to host most PHP
