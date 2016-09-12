@@ -29,10 +29,14 @@ RUN \
   && apt-get remove --purge -y curl \
 
   # cleanup apt cache
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* \
+
+  # app dir
+  && mkdir /app
+
+WORKDIR /app
 
 COPY httpd*.conf /usr/local/apache2/conf/
-
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 CMD ["/usr/bin/supervisord"]
